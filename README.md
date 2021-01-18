@@ -1,2 +1,0 @@
-# study
-test and homework
