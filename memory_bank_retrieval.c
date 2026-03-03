@@ -22,7 +22,6 @@
  * Common definitions
  * ================================================================ */
 #define BANK_SIZE    64   /* number of slots in the memory bank    */
-#define KEY_LEN      16   /* max key length (including '\0')       */
 #define VAL_LEN      64   /* max value length (including '\0')     */
 
 typedef struct {
@@ -207,10 +206,10 @@ int cam_search(const CAMBank *bank, const char *query)
 
 void demo_cam(void)
 {
+    CAMBank bank;
     int tag;
 
     printf("=== 3. Content-Addressable Memory (内容寻址检索) ===\n");
-    CAMBank bank;
     cam_init(&bank);
     cam_insert(&bank, "192.168.1.0", 1);
     cam_insert(&bank, "10.0.0.0",    2);
